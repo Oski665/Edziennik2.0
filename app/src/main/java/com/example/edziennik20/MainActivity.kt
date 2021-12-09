@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         val btn_click_me = findViewById(R.id.btn_click_me) as Button
 
         btn_click_me.setOnClickListener{
-            val intent = Intent(this,Activity2::class.java)
+            val intent = Intent(this,MainActivity2::class.java)
             Toast.makeText(this@MainActivity, "Zalogowano", Toast.LENGTH_SHORT).show()
             startActivity(intent)
         }
