@@ -5,16 +5,28 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="User Dara" />
+            android:id="@+id/nav_dane"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="Dane Urzytkownika" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Grades" />
+            android:id="@+id/nav_oceny"
+            android:icon="@drawable/ic_baseline_font_download_24"
+            android:title="Oceny" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Schedule" />
+            android:id="@+id/nav_plan"
+            android:icon="@drawable/ic_baseline_calendar_today_24"
+            android:title="Plan zajęć" />
+        <item
+            android:id="@+id/nav_sprawdziany"
+            android:icon="@drawable/ic_baseline_assignment_24"
+            android:title="Sprawdziany" />
+        <item
+            android:id="@+id/nav_uwagi"
+            android:icon="@drawable/ic_baseline_new_releases_24"
+            android:title="Uwagi" />
+        <item
+            android:id="@+id/nav_daktywno"
+            android:icon="@drawable/ic_baseline_attach_money_24"
+            android:title="Dodatkowe aktywności" />
     </group>
 </menu>
