@@ -28,7 +28,7 @@ public class Database extends SQLiteOpenHelper {
     //Oceny
     public static final String TABLE_NAME_OCENY = "Oceny";
     public static final String COLUMN_ID_OCENY = "_id_oceny";
-    public static final int COLUMN_OCENA = 1;
+    public static final String  COLUMN_OCENA = "Ocena";
 
     //Sprawdziany
     public static final String TABLE_NAME_TEST= "Sprawdziany";
@@ -44,12 +44,45 @@ public class Database extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(SQLiteDatabase db) {
+
+        String query =
+                "CREATE TABLE " + TABLE_NAME_UCZNIOWIE +
+                        "(" + COLUMN_ID_UCZNIOWIE + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_NAME + " TEXT, " +
+                        COLUMN_LAST_NAME + " TEXT, " +
+                        COLUMN_EMAIL + " TEXT);";
+
+
+        String query2 =
+                "CREATE TABLE " + TABLE_NAME_UWAGI +
+                        "(" + COLUMN_ID_UWAGI + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_TRESC + " TEXT);";
+        String query3 =
+                "CREATE TABLE " + TABLE_NAME_OCENY +
+                        "(" + COLUMN_ID_OCENY + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_OCENA + " INTEGER);";
+        String query4 =
+                "CREATE TABLE " + TABLE_NAME_TEST +
+                        "(" + COLUMN_ID_TEST + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        COLUMN_DATA+ " TEXT);";
+
+
+        db.execSQL(query);
+        db.execSQL(query2);
+        db.execSQL(query3);
+        db.execSQL(query4);
 
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_UCZNIOWIE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_UWAGI);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_OCENY);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TEST);
+
+
 
     }
 }
