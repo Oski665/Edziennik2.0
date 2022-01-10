@@ -22,10 +22,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        val listView = findViewById(R.id.listView) as ListView
-//        val butons = arrayOf()
-
     }
-
 
 }
