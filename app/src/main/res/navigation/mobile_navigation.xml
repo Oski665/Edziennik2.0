@@ -9,25 +9,47 @@
         android:id="@+id/nav_home"
         android:name="com.example.edziennik20.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_grades" />
-
-    <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.edziennik20.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_user_data" />
-
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.edziennik20.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_schedule" />
+        tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_oceny"
         android:name="com.example.edziennik20.ui.grades.GradesFragment"
-        android:label="Grades"
+        android:label="Oceny"
         tools:layout="@layout/grades_layout">
+    </fragment>
 
+    <fragment
+        android:id="@+id/nav_dane"
+        android:name="com.example.edziennik20.ui.userdata.UserdataFragment"
+        android:label="Dane użytkownika"
+        tools:layout="@layout/fragment_userdata">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_plan"
+        android:name="com.example.edziennik20.ui.schedule.ScheduleFragment"
+        android:label="Plan zajęć"
+        tools:layout="@layout/fragment_schedule">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_uwagi"
+        android:name="com.example.edziennik20.ui.comments.CommentsFragment"
+        android:label="Uwagi"
+        tools:layout="@layout/fragment_comments">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_sprawdziany"
+        android:name="com.example.edziennik20.ui.exam.ExamFragment"
+        android:label="Sprawdziany"
+        tools:layout="@layout/fragment_exam">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_daktywno"
+        android:name="com.example.edziennik20.ui.extraactivities.ExtraActivitiesFragment"
+        android:label="Dodatkowe aktywności"
+        tools:layout="@layout/fragment_extraactivities">
     </fragment>
 </navigation>
