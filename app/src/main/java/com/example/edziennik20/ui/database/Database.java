@@ -1,6 +1,8 @@
 package com.example.edziennik20.ui.database;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -35,14 +37,17 @@ public class Database extends SQLiteOpenHelper {
     public static final String COLUMN_ID_TEST = "_id_sprawdzianu";
     public static final String COLUMN_DATA = "Data";
 
+    //User
+    public static final String TABLE_NAME_USER= "USER";
+    public static final String COLUMN_USERNAME= "Email";
+    public static final String COLUMN_PASSWORD = "Password";
 
 
 
 
-    public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, name, factory, version);
+    public Database(Context context) {
+        super(context, "E-dziennik", null, 1);
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -66,12 +71,20 @@ public class Database extends SQLiteOpenHelper {
                 "CREATE TABLE " + TABLE_NAME_TEST +
                         "(" + COLUMN_ID_TEST + "INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         COLUMN_DATA+ " TEXT);";
+        String query5 =
+                "CREATE TABLE " + TABLE_NAME_USER +
+                        "(" + COLUMN_USERNAME + "TEXT PRIMARY KEY, " +
+                        COLUMN_PASSWORD+ " TEXT);";
+        String query6 =
+                "INSERT INTO " + TABLE_NAME_USER + " VALUES('username', 'password')";
 
 
         db.execSQL(query);
         db.execSQL(query2);
         db.execSQL(query3);
         db.execSQL(query4);
+        db.execSQL(query5);
+        db.execSQL(query6);
 
     }
 
@@ -81,8 +94,25 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_UWAGI);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_OCENY);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TEST);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_USER);
 
-
-
+    }
+//    public Boolean insertData(String username, String password){
+//        SQLiteDatabase db = this.getWritableDatabase();
+//        ContentValues contentValues= new ContentValues();
+//        contentValues.put("username", username);
+//        contentValues.put("password", password);
+//        long result = db.insert("USER", null, contentValues);
+//        if(result==-1) return false;
+//        else
+//            return true;
+//    }
+    public Boolean checkusernamepassword(String Email, String Password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from USER where Email = ? and Password = ?", new String[] {Email,Password});
+        if(cursor.getCount()>0)
+            return true;
+        else
+            return false;
     }
 }
