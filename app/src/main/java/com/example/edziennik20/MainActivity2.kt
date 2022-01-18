@@ -1,7 +1,9 @@
 package com.example.edziennik20
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.os.strictmode.SqliteObjectLeakedViolation
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -16,6 +18,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.edziennik20.databinding.ActivityMain2Binding
+import com.example.edziennik20.ui.database.Database
 
 class MainActivity2 : AppCompatActivity() {
 
@@ -24,6 +27,8 @@ class MainActivity2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
 
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)

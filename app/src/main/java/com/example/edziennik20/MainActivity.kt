@@ -10,6 +10,7 @@ import com.example.edziennik20.ui.database.Database
 import kotlin.properties.Delegates
 import android.R.layout.activity_list_item
 import android.content.DialogInterface
+import android.content.pm.ActivityInfo
 import android.view.View
 
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
 
         val password = findViewById(R.id.editTextPass) as EditText
         val email = findViewById(R.id.editTextEmail) as EditText
@@ -28,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 
 
 DB = Database(this)
+
         btn_click_me!!.setOnClickListener(object : View.OnClickListener {
     override fun onClick(view: View?) {
         val user = email!!.text.toString()

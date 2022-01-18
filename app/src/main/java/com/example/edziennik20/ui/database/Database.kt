@@ -13,6 +13,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
                 COLUMN_NAME + " TEXT, " +
                 COLUMN_LAST_NAME + " TEXT, " +
                 COLUMN_EMAIL + " TEXT, " +
+                COLUMN_ISLOGGED + " INTEGER, " +
                 COLUMN_PASSWORD + " TEXT);"
         val query2 = "CREATE TABLE " + TABLE_NAME_UWAGI +
                 "(" + COLUMN_ID_UWAGI + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -23,7 +24,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         val query4 = "CREATE TABLE " + TABLE_NAME_TEST +
                 "(" + COLUMN_ID_TEST + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_DATA + " TEXT);"
-        val query6 = "INSERT INTO " + TABLE_NAME_UCZNIOWIE + " VALUES(1,'Piotr','Piotrowski','username', 'password')"
+        val query6 = "INSERT INTO " + TABLE_NAME_UCZNIOWIE + " VALUES(1,'Piotr','Piotrowski','username', 0, 'password')"
         db.execSQL(query)
         db.execSQL(query2)
         db.execSQL(query3)
@@ -54,7 +55,15 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
             "Select * from "+ TABLE_NAME_UCZNIOWIE +" where "+COLUMN_EMAIL+" = ? and "+COLUMN_PASSWORD +" = ?",
             arrayOf(Email, Password)
         )
-        return if (cursor.count > 0) true else false
+        if (cursor.count > 0){
+            val cursor = db.execSQL(
+                "Update "+ TABLE_NAME_UCZNIOWIE +" SET "+ COLUMN_ISLOGGED +" = 1 WHERE "+ COLUMN_EMAIL +" = '"+ Email+"';",
+//                arrayOf(Email)
+            )
+         return true
+        }else{
+           return false
+        }
     }
 
     companion object {
@@ -68,6 +77,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         const val COLUMN_NAME = "imie"
         const val COLUMN_LAST_NAME = "nazwisko"
         const val COLUMN_EMAIL = "Email"
+        const val COLUMN_ISLOGGED = "Zalogowany"
         const val COLUMN_PASSWORD = "Password"
 
         //Uwagi

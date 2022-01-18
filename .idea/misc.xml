@@ -3,11 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/activity_2.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/activity_main2.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/app_bar_main.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/content_main.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/fragment_comments.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/fragment_exam.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/fragment_extraactivities.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/fragment_home.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/fragment_schedule.xml" value="0.20677083333333332" />
         <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/fragment_user_data.xml" value="0.31875" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/fragment_userdata.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/grades_layout.xml" value="0.20677083333333332" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/nav_header_main.xml" value="0.3145833333333333" />
+        <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/layout/progress_bar.xml" value="0.3145833333333333" />
         <entry key="..\:/Users/Dawid/AndroidStudioProjects/Edziennik2.1/app/src/main/res/menu/activity_main_drawer.xml" value="0.31875" />
         <entry key="..\:/Users/Oskar/AndroidStudioProjects/Edziennik20/app/src/main/res/drawable/ic_baseline_assignment_24.xml" value="0.3828125" />
         <entry key="..\:/Users/Oskar/AndroidStudioProjects/Edziennik20/app/src/main/res/drawable/side_nav_bar.xml" value="0.22135416666666666" />
