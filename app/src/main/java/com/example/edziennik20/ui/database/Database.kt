@@ -9,10 +9,11 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
     private val context: Context? = null
     override fun onCreate(db: SQLiteDatabase) {
         val query = "CREATE TABLE " + TABLE_NAME_UCZNIOWIE +
-                "(" + COLUMN_ID_UCZNIOWIE + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "(" + COLUMN_ID_UCZNIOWIE + " INTEGER PRIMARY KEY, " +
                 COLUMN_NAME + " TEXT, " +
                 COLUMN_LAST_NAME + " TEXT, " +
-                COLUMN_EMAIL + " TEXT);"
+                COLUMN_EMAIL + " TEXT, " +
+                COLUMN_PASSWORD + " TEXT);"
         val query2 = "CREATE TABLE " + TABLE_NAME_UWAGI +
                 "(" + COLUMN_ID_UWAGI + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_TRESC + " TEXT);"
@@ -22,15 +23,11 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         val query4 = "CREATE TABLE " + TABLE_NAME_TEST +
                 "(" + COLUMN_ID_TEST + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_DATA + " TEXT);"
-        val query5 = "CREATE TABLE " + TABLE_NAME_USER +
-                "(" + COLUMN_USERNAME + " TEXT PRIMARY KEY, " +
-                COLUMN_PASSWORD + " TEXT);"
-        val query6 = "INSERT INTO " + TABLE_NAME_USER + " VALUES('username', 'password')"
+        val query6 = "INSERT INTO " + TABLE_NAME_UCZNIOWIE + " VALUES(1,'Piotr','Piotrowski','username', 'password')"
         db.execSQL(query)
         db.execSQL(query2)
         db.execSQL(query3)
         db.execSQL(query4)
-        db.execSQL(query5)
         db.execSQL(query6)
     }
 
@@ -39,7 +36,6 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_UWAGI)
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_OCENY)
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TEST)
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_USER)
     }
 
     //    public Boolean insertData(String username, String password){
@@ -55,7 +51,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
     fun checkusernamepassword(Email: String, Password: String): Boolean {
         val db = this.writableDatabase
         val cursor = db.rawQuery(
-            "Select * from "+ TABLE_NAME_USER +" where "+COLUMN_USERNAME+" = ? and "+COLUMN_PASSWORD +" = ?",
+            "Select * from "+ TABLE_NAME_UCZNIOWIE +" where "+COLUMN_EMAIL+" = ? and "+COLUMN_PASSWORD +" = ?",
             arrayOf(Email, Password)
         )
         return if (cursor.count > 0) true else false
@@ -71,7 +67,8 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         const val COLUMN_ID_UCZNIOWIE = "_id_ucznia"
         const val COLUMN_NAME = "imie"
         const val COLUMN_LAST_NAME = "nazwisko"
-        const val COLUMN_EMAIL = "email"
+        const val COLUMN_EMAIL = "Email"
+        const val COLUMN_PASSWORD = "Password"
 
         //Uwagi
         const val TABLE_NAME_UWAGI = "Uwagi"
@@ -88,9 +85,9 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         const val COLUMN_ID_TEST = "_id_sprawdzianu"
         const val COLUMN_DATA = "Data"
 
-        //User
-        const val TABLE_NAME_USER = "USER"
-        const val COLUMN_USERNAME = "Email"
-        const val COLUMN_PASSWORD = "Password"
+//        //User
+//        const val TABLE_NAME_USER = "USER"
+//        const val COLUMN_USERNAME = "Email"
+//        const val COLUMN_PASSWORD = "Password"
     }
 }

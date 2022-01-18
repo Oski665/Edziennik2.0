@@ -34,14 +34,14 @@ DB = Database(this)
         val pass = password!!.text.toString()
         if (user == "" || pass == "") Toast.makeText(
             this@MainActivity,
-            "Please enter all the fields",
+            "Uzupełnij wszystkie pola",
             Toast.LENGTH_SHORT
         ).show() else {
             val checkuserpass: Boolean = DB!!.checkusernamepassword(user, pass)
             if (checkuserpass == true) {
                 Toast.makeText(
                     this@MainActivity,
-                    "Sign in successfull",
+                    "Zalogowano!",
                     Toast.LENGTH_SHORT
                 ).show()
                 val intent = Intent(applicationContext, MainActivity2::class.java)
@@ -49,7 +49,7 @@ DB = Database(this)
             } else {
                 Toast.makeText(
                     this@MainActivity,
-                    "Invalid Credentials",
+                    "Złe dane",
                     Toast.LENGTH_SHORT
                 ).show()
             }
