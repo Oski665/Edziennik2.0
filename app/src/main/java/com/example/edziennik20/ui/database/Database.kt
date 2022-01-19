@@ -1,6 +1,7 @@
 package com.example.edziennik20.ui.database
 
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteOpenHelper
 import android.database.sqlite.SQLiteDatabase
 import com.example.edziennik20.ui.database.Database
@@ -49,6 +50,13 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
     //        else
     //            return true;
     //    }
+    fun getStudentData(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_UCZNIOWIE +" WHERE "+ COLUMN_ISLOGGED + " = 1",null);
+
+        return cursor
+    }
     fun checkusernamepassword(Email: String, Password: String): Boolean {
         val db = this.writableDatabase
         val cursor = db.rawQuery(
