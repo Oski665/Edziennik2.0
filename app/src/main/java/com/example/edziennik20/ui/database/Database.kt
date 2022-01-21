@@ -86,7 +86,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
     fun getUwaga(): Cursor? {
         val db = this.writableDatabase
         val cursor = db.rawQuery(
-            "Select "+ COLUMN_TRESC+" from "+ TABLE_NAME_UWAGI+ " , "+ TABLE_NAME_UCZNIOWIE +" WHERE "+ COLUMN_ID_UCZNIA + " = "+ COLUMN_ID_UCZNIOWIE +" AND "+ COLUMN_ISLOGGED + " = 1",null);
+            "Select * from "+ TABLE_NAME_UWAGI+ " , "+ TABLE_NAME_UCZNIOWIE +" WHERE "+ COLUMN_ID_UCZNIA + " = "+ COLUMN_ID_UCZNIOWIE +" AND "+ COLUMN_ISLOGGED + " = 1",null);
 
         return cursor
     }

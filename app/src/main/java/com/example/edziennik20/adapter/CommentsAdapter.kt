@@ -5,26 +5,46 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.example.edziennik20.R
-import com.example.edziennik20.ui.database.CommentData
+import com.example.edziennik20.ui.database.Database
 
-class CommentsAdapter(private val context : Activity,private val arrayList : ArrayList<CommentData>) : ArrayAdapter<CommentData>(context,
-    R.layout.list_item,arrayList) {
+class CommentsAdapter: RecyclerView.Adapter<CommentsAdapter.ViewHolder>(){
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
-        val inflater : LayoutInflater = LayoutInflater.from(context)
-        val view : View = inflater.inflate(R.layout.list_item,null)
 
-        val cmt : TextView = view.findViewById(R.id.commentText)
-        val desc : TextView = view.findViewById(R.id.descriptionText)
-        val cmtTime : TextView = view.findViewById(R.id.commentTime)
 
-        cmt.text = arrayList[position].commentText
-        desc.text = arrayList[position].decriptionText
-        cmtTime.text = arrayList[position].commentTime
+    private var titles = arrayOf("Uwaga 1","Uwaga 2","Uwaga 3","Uwaga 4","Uwaga 5","Uwaga 6","Uwaga 7")
+    private var descriptions = arrayOf("Opis 1","Opis 2","Opis 3","Opis 4","Opis 5","Opis 6","Opis 7")
+//    private var images = intArrayOf(R.drawable.attention,R.drawable.attention,R.drawable.attention,R.drawable.attention,R.drawable.attention,R.drawable.attention,R.drawable.attention)
 
-        return view
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommentsAdapter.ViewHolder {
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent,false)
+
+        return ViewHolder(v)
+    }
+
+    override fun onBindViewHolder(holder: CommentsAdapter.ViewHolder, position: Int) {
+        holder.itemTitle.text = titles[position]
+        holder.itemDescription.text = descriptions[position]
+//        holder.itemImage.setImageResource(images[position])
+    }
+
+    override fun getItemCount(): Int {
+        return titles.size
+    }
+
+    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+//        var itemImage: ImageView
+        var itemTitle: TextView
+        var itemDescription: TextView
+
+        init{
+//            itemImage = itemView.findViewById(R.id.item_image)
+            itemTitle = itemView.findViewById(R.id.item_title)
+            itemDescription = itemView.findViewById(R.id.item_description)
+        }
     }
 }
