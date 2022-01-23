@@ -41,7 +41,7 @@
         <TableRow android:background="#FFFFFF">
 
             <TextView
-                android:id="@+id/item_nameSubject"
+                android:id="@+id/item_matematyka"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
@@ -51,7 +51,99 @@
                 android:textSize="18sp"></TextView>
 
             <TextView
-                android:id="@+id/item_nameGrades"
+                android:id="@+id/item_matGrades"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+        </TableRow>
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/item_polski"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/item_polGrades"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+        </TableRow>
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/item_angielski"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/item_angGrades"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+        </TableRow>
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/item_biologia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/item_bioGrades"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+        </TableRow>
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/item_fizyka"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp"></TextView>
+
+            <TextView
+                android:id="@+id/item_fizGrades"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

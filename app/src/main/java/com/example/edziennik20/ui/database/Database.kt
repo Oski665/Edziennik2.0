@@ -22,6 +22,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
                 COLUMN_TRESC + " TEXT);"
         val query3 = "CREATE TABLE " + TABLE_NAME_OCENY +
                 "(" + COLUMN_ID_OCENY + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_NAZWA_PRZEDMIOTU + " TEXT, " +
                 COLUMN_OCENA + " INTEGER);"
         val query4 = "CREATE TABLE " + TABLE_NAME_TEST +
                 "(" + COLUMN_ID_TEST + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -39,6 +40,22 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
                 " ( " + COLUMN_ID_DODA + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_ID_UCZNIA_Z_DODA + " INTEGER, " +
                 COLUMN_TRESC_DODA + " TEXT);"
+        val query12 = "CREATE TABLE " + TABLE_NAME_PLAN +
+                " ( " + COLUMN_ID_PLANU + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_DZIEN + " TEXT, " +
+                COLUMN_PRZEDMIOTY + " TEXT);"
+        val query13 = "INSERT INTO " + TABLE_NAME_PLAN + " VALUES(1,'Poniedziałek','Matematyka, Język Polski, Język Angielski, WF')"
+        val query14 = "INSERT INTO " + TABLE_NAME_PLAN + " VALUES(2,'Wtorek','Plastyka, Historia, Muzyka, Język Niemiecki')"
+        val query15 = "INSERT INTO " + TABLE_NAME_PLAN + " VALUES(3,'Środa','Matematyka, Język Polski, Język Angielski, WF')"
+        val query16 = "INSERT INTO " + TABLE_NAME_PLAN + " VALUES(4,'Czwartek','Język Niemiecki, Język Polski, Biologia, Fizyka')"
+        val query17 = "INSERT INTO " + TABLE_NAME_PLAN + " VALUES(5,'Piątek','Geografia, Chemia, Język Angielski, WF')"
+        val query18 = "INSERT INTO " + TABLE_NAME_OCENY + " VALUES(1,'Matematyka',4)"
+        val query19 = "INSERT INTO " + TABLE_NAME_OCENY + " VALUES(2,'Język Polski',3)"
+        val query20 = "INSERT INTO " + TABLE_NAME_OCENY + " VALUES(3,'Język Angielski',5)"
+        val query21 = "INSERT INTO " + TABLE_NAME_OCENY + " VALUES(4,'Biologia',3)"
+        val query22 = "INSERT INTO " + TABLE_NAME_OCENY + " VALUES(5,'Fizyka',4)"
+        val query23 = "INSERT INTO " + TABLE_NAME_OCENY + " VALUES(6,'Matematyka',4)"
+        val query24 = "INSERT INTO " + TABLE_NAME_OCENY + " VALUES(7,'Jezyk Polski',5)"
         db.execSQL(query)
         db.execSQL(query2)
         db.execSQL(query3)
@@ -49,6 +66,19 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         db.execSQL(query9)
         db.execSQL(query10)
         db.execSQL(query11)
+        db.execSQL(query12)
+        db.execSQL(query13)
+        db.execSQL(query14)
+        db.execSQL(query15)
+        db.execSQL(query16)
+        db.execSQL(query17)
+        db.execSQL(query18)
+        db.execSQL(query19)
+        db.execSQL(query20)
+        db.execSQL(query21)
+        db.execSQL(query22)
+        db.execSQL(query23)
+        db.execSQL(query24)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, i: Int, i1: Int) {
@@ -57,6 +87,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_OCENY)
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_TEST)
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_DODA)
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME_PLAN)
     }
 
     //    public Boolean insertData(String username, String password){
@@ -76,6 +107,77 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
 
         return cursor
     }
+
+    fun getOcenyMat(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_OCENY +" WHERE "+ COLUMN_NAZWA_PRZEDMIOTU + " = 'Matematyka'",null);
+
+        return cursor
+    }
+    fun getOcenyJpol(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_OCENY +" WHERE "+ COLUMN_NAZWA_PRZEDMIOTU + " = 'Język Polski'",null);
+
+        return cursor
+    }
+    fun getOcenyJang(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_OCENY +" WHERE "+ COLUMN_NAZWA_PRZEDMIOTU + " = 'Język Angielski'",null);
+
+        return cursor
+    }
+    fun getOcenyBio(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_OCENY +" WHERE "+ COLUMN_NAZWA_PRZEDMIOTU + " = 'Biologia'",null);
+
+        return cursor
+    }
+    fun getOcenyFiz(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_OCENY +" WHERE "+ COLUMN_NAZWA_PRZEDMIOTU + " = 'Fizyka'",null);
+
+        return cursor
+    }
+    fun getPon(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_PLAN +" WHERE "+ COLUMN_DZIEN + " = 'Poniedziałek'",null);
+
+        return cursor
+    }
+    fun getWto(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_PLAN +" WHERE "+ COLUMN_DZIEN + " = 'Wtorek'",null);
+
+        return cursor
+    }fun getSro(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_PLAN +" WHERE "+ COLUMN_DZIEN + " = 'Środa'",null);
+
+        return cursor
+    }
+    fun getCzw(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_PLAN +" WHERE "+ COLUMN_DZIEN + " = 'Czwartek'",null);
+
+        return cursor
+    }
+    fun getPia(): Cursor? {
+        val db = this.writableDatabase
+        val cursor = db.rawQuery(
+            "Select * from "+ TABLE_NAME_PLAN +" WHERE "+ COLUMN_DZIEN + " = 'Piątek'",null);
+
+        return cursor
+    }
+
     fun getTest(): Cursor? {
         val db = this.writableDatabase
         val cursor = db.rawQuery(
@@ -137,6 +239,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         //Oceny
         const val TABLE_NAME_OCENY = "Oceny"
         const val COLUMN_ID_OCENY = "_id_oceny"
+        const val COLUMN_NAZWA_PRZEDMIOTU = "Przedmiot"
         const val COLUMN_OCENA = "Ocena"
 
         //Sprawdziany
@@ -149,6 +252,12 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         const val COLUMN_ID_UCZNIA_Z_DODA = "_id_ucznia_z_DodAkt"
         const val COLUMN_ID_DODA = "_id_DodAkt"
         const val COLUMN_TRESC_DODA = "tresc_dodAkt"
+
+        //Plan
+        const val TABLE_NAME_PLAN = "Plan_zajęć"
+        const val COLUMN_ID_PLANU = "_id_planu"
+        const val COLUMN_DZIEN = "Dzien"
+        const val COLUMN_PRZEDMIOTY = "Przedmioty"
 
 //        //User
 //        const val TABLE_NAME_USER = "USER"

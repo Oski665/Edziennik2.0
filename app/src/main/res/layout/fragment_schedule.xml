@@ -176,61 +176,7 @@
 
         </TableRow>
 
-        <TableRow android:background="#FFFFFF">
 
-            <TextView
-                android:id="@+id/item_saturday"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="4"
-                android:padding="10sp"
-                android:text="Sobota"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/item_subjects6"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="4"
-                android:padding="10sp"
-                android:text="Przedmioty"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </TableRow>
-
-        <TableRow android:background="#FFFFFF">
-
-            <TextView
-                android:id="@+id/item_sunday"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="4"
-                android:padding="10sp"
-                android:text="Niedziela"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/item_subjects7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="4"
-                android:padding="10sp"
-                android:text="Przedmioty"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-        </TableRow>
 
     </TableLayout>
 
