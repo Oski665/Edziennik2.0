@@ -30,10 +30,12 @@ class ExamFragment  : Fragment() {
         while(cursor!!.moveToNext()) {
             // val data1 = cursor!!.getString(cursor.getColumnIndex(Database.COLUMN_TRESC));
 
-
-            textView1.append(cursor!!.getString(cursor.getColumnIndex(Database.COLUMN_DATA)))
-
             textView2.append(cursor!!.getString(cursor.getColumnIndex(Database.COLUMN_ID_TEST)))
+            textView2.append("\n")
+            textView2.append("\n")
+            textView1.append(cursor!!.getString(cursor.getColumnIndex(Database.COLUMN_DATA)))
+            textView1.append("\n")
+            textView1.append("\n")
 
         }
 

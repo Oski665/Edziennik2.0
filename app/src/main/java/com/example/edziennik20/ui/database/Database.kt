@@ -25,15 +25,16 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
                 COLUMN_NAZWA_PRZEDMIOTU + " TEXT, " +
                 COLUMN_OCENA + " INTEGER);"
         val query4 = "CREATE TABLE " + TABLE_NAME_TEST +
-                "(" + COLUMN_ID_TEST + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "(" + COLUMN_ID_TEST + " TEXT PRIMARY KEY, " +
                 COLUMN_DATA + " TEXT);"
-        val query6 = "INSERT INTO " + TABLE_NAME_UCZNIOWIE + " VALUES(1,'Piotr','Piotrowski','username', 0, 'password')"
+        val query6 = "INSERT INTO " + TABLE_NAME_UCZNIOWIE + " VALUES(1,'Piotr','Piotrowski','piopio000', 0, 'password')"
 
         val query7 = "INSERT INTO " + TABLE_NAME_UWAGI + " VALUES(1,1,'Piotr snie słucha nauczycielki')"
 
         val query8 = "INSERT INTO " + TABLE_NAME_UWAGI + " VALUES(2,1,'Pobił kolegę')"
 
-        val query9 = "INSERT INTO " + TABLE_NAME_TEST + " VALUES(2,'10.02.2022')"
+        val query9 = "INSERT INTO " + TABLE_NAME_TEST + " VALUES('Matematyka','10.02.2022')"
+        val query25 = "INSERT INTO " + TABLE_NAME_TEST + " VALUES('Biologia','07.01.2022')"
 
         val query11 = "INSERT INTO " + TABLE_NAME_DODA + " VALUES(1,1,'Pomógł w strojeniu sali')"
         val query10 = "CREATE TABLE " + TABLE_NAME_DODA +
@@ -79,6 +80,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
         db.execSQL(query22)
         db.execSQL(query23)
         db.execSQL(query24)
+        db.execSQL(query25)
     }
 
     override fun onUpgrade(db: SQLiteDatabase, i: Int, i1: Int) {

@@ -7,10 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.edziennik20.R
-import com.example.edziennik20.adapter.CommentsAdapter
 import com.example.edziennik20.ui.database.Database
 
 class CommentsFragment  : Fragment() {

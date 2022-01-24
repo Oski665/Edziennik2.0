@@ -29,35 +29,35 @@ class MainActivity : AppCompatActivity() {
         val btn_click_me = findViewById(R.id.btn_click_me) as Button
 
 
-DB = Database(this)
+        DB = Database(this)
 
         btn_click_me!!.setOnClickListener(object : View.OnClickListener {
-    override fun onClick(view: View?) {
-        val user = email!!.text.toString()
-        val pass = password!!.text.toString()
-        if (user == "" || pass == "") Toast.makeText(
-            this@MainActivity,
-            "Uzupełnij wszystkie pola",
-            Toast.LENGTH_SHORT
-        ).show() else {
-            val checkuserpass: Boolean = DB!!.checkusernamepassword(user, pass)
-            if (checkuserpass == true) {
-                Toast.makeText(
+            override fun onClick(view: View?) {
+                val user = email!!.text.toString()
+                val pass = password!!.text.toString()
+                if (user == "" || pass == "") Toast.makeText(
                     this@MainActivity,
-                    "Zalogowano!",
+                    "Uzupełnij wszystkie pola",
                     Toast.LENGTH_SHORT
-                ).show()
-                val intent = Intent(applicationContext, MainActivity2::class.java)
-                startActivity(intent)
-            } else {
-                Toast.makeText(
-                    this@MainActivity,
-                    "Złe dane",
-                    Toast.LENGTH_SHORT
-                ).show()
+                ).show() else {
+                    val checkuserpass: Boolean = DB!!.checkusernamepassword(user, pass)
+                    if (checkuserpass == true) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Zalogowano!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        val intent = Intent(applicationContext, MainActivity2::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(
+                            this@MainActivity,
+                            "Złe dane",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
             }
+        })
         }
-    }
-})
-}
 }
