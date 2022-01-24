@@ -23,6 +23,7 @@ class ExtraActivitiesFragment  : Fragment() {
         val binding =  inflater.inflate(R.layout.fragment_extraactivities,container,false)
 
         val textView1 = binding.findViewById(R.id.activitiesListView) as TextView
+        val textView2 = binding.findViewById(R.id.item_description2) as TextView
 
         val cursor = DB!!.getDodA()
 
@@ -32,6 +33,10 @@ class ExtraActivitiesFragment  : Fragment() {
 
 
             textView1.append(cursor!!.getString(cursor.getColumnIndex(Database.COLUMN_TRESC_DODA)))
+            textView1.append("\n")
+            textView1.append("\n")
+            textView2.append(cursor!!.getString(cursor.getColumnIndex(Database.COLUMN_ID_DODA)))
+            textView1.append("\n")
             textView1.append("\n")
         }
 

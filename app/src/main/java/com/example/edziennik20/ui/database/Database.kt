@@ -195,7 +195,7 @@ class Database(context: Context?) : SQLiteOpenHelper(context, "E-dziennik", null
     fun getDodA(): Cursor? {
         val db = this.writableDatabase
         val cursor = db.rawQuery(
-            "Select "+ COLUMN_TRESC_DODA+" from "+ TABLE_NAME_DODA+ " , "+ TABLE_NAME_UCZNIOWIE +" WHERE "+ COLUMN_ID_UCZNIA_Z_DODA + " = "+ COLUMN_ID_UCZNIOWIE +" AND "+ COLUMN_ISLOGGED + " = 1",null);
+            "Select * from "+ TABLE_NAME_DODA+ " , "+ TABLE_NAME_UCZNIOWIE +" WHERE "+ COLUMN_ID_UCZNIA_Z_DODA + " = "+ COLUMN_ID_UCZNIOWIE +" AND "+ COLUMN_ISLOGGED + " = 1",null);
 
         return cursor
     }

@@ -4,31 +4,65 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <TextView
-        android:id="@+id/testListView"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
-        tools:ignore="MissingConstraints" />
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/idtestuListView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.291"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
-        tools:ignore="MissingConstraints" />
+        <TableRow android:background="#4CAF50">
+            <TextView
+                android:id="@+id/item_indeks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Nr"
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal">
+            </TextView>
+            <TextView
+                android:id="@+id/item_cokolwiek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Data"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_gravity="center_horizontal">
+            </TextView>
+
+        </TableRow>
+
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/idtestuListView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/testListView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="4"
+                android:padding="10sp"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </TableRow>
+
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

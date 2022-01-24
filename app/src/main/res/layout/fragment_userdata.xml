@@ -4,58 +4,152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/idListView"
-        android:layout_width="wrap_content"
+    <TableLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.204"
-        tools:ignore="MissingConstraints" />
+        android:background="@color/white"
+        tools:ignore="MissingConstraints">
 
-    <TextView
-        android:id="@+id/nameListView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.561"
-        tools:ignore="MissingConstraints" />
+        <TableRow android:background="#4CAF50">
+            <TextView
+                android:id="@+id/item_indeks"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal">
+            </TextView>
+            <TextView
+                android:id="@+id/item_cokolwiek"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_gravity="center_horizontal">
+            </TextView>
 
-    <TextView
-        android:id="@+id/lastNameListView"
+        </TableRow>
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.431"
-        tools:ignore="MissingConstraints" />
+        <TableRow android:background="#FFFFFF">
 
-    <TextView
-        android:id="@+id/emailListView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Id"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_gravity="center_horizontal"/>
+
+
+            <TextView
+                android:id="@+id/idListView"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:textSize="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.204"
+                tools:ignore="MissingConstraints" />
+        </TableRow>
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Imie"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_gravity="center_horizontal"/>
+
+
+            <TextView
+                android:id="@+id/nameListView"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:textSize="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.204"
+                tools:ignore="MissingConstraints" />
+        </TableRow>
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/lastname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Imie"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/lastNameListView"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:textSize="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.204"
+                tools:ignore="MissingConstraints" />
+        </TableRow>
+        <TableRow android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Imie"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:padding="10sp"
+                android:textSize="18sp"
+                android:layout_weight="4"
+                android:layout_gravity="center_horizontal"/>
+
+
+            <TextView
+                android:id="@+id/emailListView"
+                android:layout_width="205dp"
+                android:layout_height="wrap_content"
+                android:textSize="32dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.204"
+                tools:ignore="MissingConstraints" />
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
